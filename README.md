@@ -43,5 +43,5 @@ To contribute to this project:
 
 We would like to thank:
 
-- [Name] for their contributions to the project
-- [Organization] for their support and resources
+- [@GitElla404](https://github.com/GitElla404), [@Plantcodess](https://github.com/Plantcodess), and [@JenniferOgbang](https://github.com/JenniferOgbang), for their contributions to the project
+- [SheCodeAfrica](https://shecodeafrica.org) and [MadeInNigeria](https://madeinnigeria.dev) for their support and resources that made this project possible.
