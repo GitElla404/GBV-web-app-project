@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static '../static/webicon.png' %}" type="image/x-icon">
+    <title>Email Form</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        form:hover {
+            transform: translateY(-5px);
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #d9534f; 
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-align: left;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #007bff; 
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input[type="email"]:focus {
+            border-color: #0056b3; 
+            outline: none;
+        }
+        button {
+            background-color: #d9534f; 
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #c9302c; 
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+        .homepage-link {
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .homepage-link:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <h2>Stay Informed</h2>
+        <label for="email">Enter your email:</label>
+        <input type="email" name="email" id="email" required placeholder="you@example.com">
+        <button type="submit">Submit</button>
+        <div class="footer">Your privacy matters to us.</div>
+        <a href="/" class="homepage-link">Go Back</a>
+    </form>
+</body>
+</html>

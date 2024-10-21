@@ -1,18 +1,41 @@
 {% load static %}
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
+    <title>Home - GBV Web App</title>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link rel="icon" href="{% static '../static/webicon.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'index.css' %}" />
+
+    <script>
+      function hideAlert() {
+            const alertBox = document.getElementById('alertBox');
+            if (alertBox) {
+                setTimeout(() => {
+                    alertBox.style.display = 'none';
+                }, 2000); 
+            }
+        }
+    </script>
   </head>
-  <body>
+  <body onload="hideAlert()">
+    <!-- Display email message -->
+    {% if messages %}
+        <div class="alert" id="alertBox">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
 <!-- Call to Action: Immediate help section -->
 {% include 'cta.html' %}
 
@@ -28,7 +51,7 @@
         heal. Share your experience anonymously and connect with others who
         understand. Together, we can break the silence and build strength.
       </p>
-      <button><b>Join The Community</b></button>
+      <button><b><a href="{% url 'collect_email' %}">Join The Community</a></b></button>
     </section>
 
     <!-- Impact Section: Invite users to get involved -->
@@ -41,7 +64,7 @@
            <p><b>Join Our Support Network</b></p>
           <p>Help survivors by sharing your skills. Check out our support programs to get involved and strengthen our community.</p>
           <div class="txtandlink">
-             <p>Join Programs</p>
+             <p><a href="{% url 'collect_email' %}">Join Programs</a></p>
              <i class='bx bx-right-arrow-alt'></i>
           </div>
         </div>
@@ -49,7 +72,7 @@
            <p><b>Support Survivors: Donate Today</b></p>
           <p>Your donation helps provide vital resources and support. Join us in creating a stronger community.</p>
           <div class="txtandlink">
-            <p>Donate</p>
+            <p><a href="{% url 'collect_email' %}">Donate</a></p>
             <i class='bx bx-right-arrow-alt'></i>
           </div>
         </div>
@@ -60,14 +83,14 @@
             Be part of our impactful Awareness Workshop! Gain valuable insights into gender-based violence (GBV) and learn how you can make a difference in your community. 
             Together, we can raise awareness and create a safer environment for everyone.</p>
           <div class="txtandlink">
-            <p>Register Now</p>
+            <p> <a href="{% url 'collect_email' %}">Register Now</a></p>
             <i class='bx bx-right-arrow-alt'></i>
           </div>
           <div class="zoomsection">
             <div class="zoom-info">
               <div class="location">
                 <i class='bx bxs-map'></i>
-                <p>Zoom link will be provided upon registration</p>
+                <p>Zoom link will be provided upon <a href="{% url 'collect_email' %}">registration</a></p>
               </div>
               <div class="datetime">
                 <i class='bx bx-time-five'></i>
@@ -92,7 +115,7 @@
           <img src="{% static 'woman.png' %}" alt="a woman"/>
           <p>Get emotional and mental support from professionals who understand your needs.</p>
           <div class="txtandlink2">
-            <p>Connect with a Counselor</p>
+            <p><a href="{% url 'collect_email' %}">Connect with a Counselor</a></p>
             <i class='bx bx-right-arrow-alt'></i>
           </div>
         </div>
@@ -100,7 +123,7 @@
           <img src="{% static 'judgment.png' %}" alt="court img"/>
           <p>Access legal guidance to protect your rights and navigate the justice system.</p>
           <div class="txtandlink2">
-            <p>Get Legal Help</p>
+            <p><a href="{% url 'reportincident' %}">Get Legal Help</a></p>
             <i class='bx bx-right-arrow-alt'></i>
           </div>
         </div>
@@ -108,7 +131,7 @@
           <img src="{% static 'wordcloud.png' %}" alt="word cloud img" />
           <p>Find safe spaces where you can stay protected and receive immediate care.</p>
           <div class="txtandlink2">
-            <p>Locate a Shelter</p>
+            <p><a href="{% url 'reportincident' %}">Locate a Shelter</a></p>
             <i class='bx bx-right-arrow-alt'></i>
           </div>
         </div>
@@ -116,7 +139,7 @@
           <img src="{% static 'woman.png' %}" alt="a woman img"/>
           <p>Get help with financial assistance to support your safety and well-being.</p>
           <div class="txtandlink2">
-            <p>Apply for Aid</p>
+            <p><a href="{% url 'collect_email' %}">Apply for Aid</a></p>
             <i class='bx bx-right-arrow-alt'></i>
           </div>
         </div>
@@ -128,7 +151,7 @@
 
 <section class="youtubevideo">
   <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/QTB1YiWxxKU?si=lq0JgBIfd4LFupbQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/JZqAuRa7o7w?si=-ImmzGnHXzlYum8K" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
   </div>
 </section>
@@ -136,38 +159,57 @@
 <!-- Testimonials Section: Real stories from users -->
 
 <section class="testimonysection">
-
-   <p id="testmaintt">Real Stories, Real Impact</p>
-    <p id="testsubtxt">Hear from survivors and advocates whose lives have been changed through the support and resources provided by our platform. Your voice matters, and together, we can make a difference.</p>
-    <div class="gridrowcontainer">
+  <p id="testmaintt">Real Stories, Real Impact</p>
+  <p id="testsubtxt">Hear from survivors and advocates whose lives have been changed through the support and resources provided by our platform. Your voice matters, and together, we can make a difference.</p>
+  <div class="gridrowcontainer">
       <div class="drows drows1">
-        <p class="testimonial1">Testimonial 1</p>
-        <p class="dtestimony">Using this app was a turning point for me. I felt safe reporting my experience anonymously, and the resources provided were incredibly helpful. Knowing I wasn’t alone made all the difference</p>
-        <p class="dtestifier">— Sarah, Survivor</p>
+          <p class="testimonial1">Testimonial 1</p>
+          <p class="dtestimony">Using this app was a turning point for me. I felt safe reporting my experience anonymously, and the resources provided were incredibly helpful. Knowing I wasn’t alone made all the difference</p>
+          <p class="dtestifier">— Sarah, Survivor</p>
       </div>
 
       <div class="drows drows2">
         <p class="testimonial1">Testimonial 2</p>
         <p class="dtestimony">I never thought I would reach out for help, but this app made it easy and safe. The support and guidance I received were invaluable, and it empowered me to take action. Thank you for creating this resource!</p>
         <p class="dtestifier">— James, Advocate</p>
-      </div>
-
-
-      <div class="drows drows3">
-        <p class="testimonial1">Testimonial 3</p>
-        <p class="dtestimony">This app is a beacon of hope for many. It allowed me to share my story without fear of exposure. The community resources connected me with local services that changed my life. Highly recommend!</p>
-        <p class="dtestifier">— Fatima, User</p>
-      </div>
-
-
-      <div class="drows drows4">
-        <p class="testimonial1">Testimonial 4</p>
-        <p class="dtestimony">I appreciate how user-friendly and discreet this app is. It made reporting a traumatic experience less intimidating. The emphasis on anonymity gave me the confidence to seek help.</p>
-        <p class="dtestifier">— Chinonso, User</p>
-      </div>
     </div>
+
+    <div class="drows drows3">
+      <p class="testimonial1">Testimonial 3</p>
+      <p class="dtestimony">This app is a beacon of hope for many. It allowed me to share my story without fear of exposure. The community resources connected me with local services that changed my life. Highly recommend!</p>
+      <p class="dtestifier">— Fatima, User</p>
+  </div>
+
+  <div class="drows drows4">
+    <p class="testimonial1">Testimonial 4</p>
+    <p class="dtestimony">I appreciate how user-friendly and discreet this app is. It made reporting a traumatic experience less intimidating. The emphasis on anonymity gave me the confidence to seek help.</p>
+    <p class="dtestifier">— Chinonso, User</p>
+</div>
+  </div>
 </section>
 <!-- Footer Section: Links for more information -->
+
 {% include 'footer.html' %}
+
+
+<script>document.addEventListener('DOMContentLoaded', function() {
+  const elementsToAnimate = document.querySelectorAll('.bannersect, .makeanimapct, .gethelp .grid-item, .reachout, .hotlinesection, .darticles .article1, .darticles .article2, .darticles .article3');
+  
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+  
+  elementsToAnimate.forEach(element => {
+    observer.observe(element);
+  });
+});
+
+        
+</script>
   </body>
 </html>
