@@ -16,8 +16,8 @@ This project aims to create a secure web platform for victims of gender-based vi
 
 ## Deployment
 
-The application is deployed on Render and accessible at https://gbv-web-app-project.onrender.com/
-Click [here](https://docs.google.com/document/d/1yu53284IZz97YDRLCJfacs7UoI3pRjHUcpwKBmKAn_o/edit?usp=sharing) to view the brief Reaserch Documentation.
+- The application is deployed on Render and accessible at https://gbv-web-app-project.onrender.com/
+- Click [here](https://docs.google.com/document/d/1yu53284IZz97YDRLCJfacs7UoI3pRjHUcpwKBmKAn_o/edit?usp=sharing) to view the brief Reaserch Documentation.
 
 
 ## Contributing
