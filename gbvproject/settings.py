@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-o)p$506l*!fj^ipe(3t!52ha5y12q6(q1$2k7%(nva&!4(xbqw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG","True") == "True"
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALOOWED_HOSTS", "127.0.0.1,localhost").split(",")
+ALLOWED_HOSTS = ['gbv-web-app-project.onrender.com', '127.0.0.1', 'localhost']
+
 
 
 
