@@ -1,0 +1,141 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+    <link rel="icon" href="{% static '../static/webicon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'reportinci.css' %}" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Report Incident</title>
+</head>
+<body>
+    <!-- Call to Action: Immediate help section -->
+    {% include 'cta.html' %}
+
+    <!-- Navigation Bar: Contains logo and menu items -->
+    {% include 'nav.html' %}
+
+    <!-- Reach out section -->
+    <section class="reachout">
+        <div class="container2">
+            <div class="text-section">
+                <p class="maintxt">Reach Out for Help!</p>
+                <p class="subtxt">Our hotline advocates are here to provide personalized, non-judgmental support tailored to your needs. Whether you want to discuss your safety, learn about available resources in your community, or connect with our programs and services, we're here for you.
+
+                <ul class="list-section">
+                    <li>Crisis counseling</li>
+                    <li>Safety planning</li>
+                    <li>Help finding <b class="highlighttxt">crisis shelters</b></li>
+                    <li>Information on local resources</li>
+                </ul>
+
+                <p>We’re here to assist you in any language. Don’t hesitate to call us now.</p>
+            </div>
+            <img src="{% static 'teamwork.png' %}" alt="An image showing teamwork" class="image-section">
+        </div>
+    </section>
+
+    <!-- Our Hotlines section-->
+<section class="hotlinesection">
+    <p class="hotlinetxt">OUR HOTLINES</p>
+    <div class="dhotlinelist">
+<div class="list1">
+    <div class="forthenumber">
+        <p class="domestictxt">DOMESTIC VIOLENCE</p>
+        <p class="davailnumber">+234 909 555 1111</p>
+    </div>
+    <div class="forthebrowntxt">
+        <p class="browntxt">For help with domestic violence, please call this hotline.</p>
+    </div>
+</div>
+
+<div class="list2">
+    <div class="forthenumber">
+        <p class="crimetxt">CRIME VICTIMS</p>
+        <p class="davailnumber">+234 803 876 2671</p>
+    </div>
+    <div class="forthebrowntxt">
+        <p class="browntxt">For help with all crimes, including support for family members of homicide victims, please call this hotline.</p>
+    </div>
+</div>
+
+
+<div class="list3">
+    <div class="forthenumber">
+        <p class="rapetxt">RAPE AND SEXUAL ASSAULTS</p>
+        <p class="davailnumber">+234 818 724 3468</p>
+    </div>
+    <div class="forthebrowntxt">
+        <p class="browntxt">For help with rape and sexual assault, please call this hotline, or call NYC’s 311. In an emergency, call 911.</p>
+    </div>
+</div>
+
+
+    </div>
+</section>
+
+
+    <!-- Featured Articles Section-->
+<section class="darticles">
+    <p class="articletxt">Features Articles</p>
+    <div class="top3articles">
+        <div class="article1">
+            <img src="{% static '../static/somebtns.png' %}" alt="A woman in black shirt">
+            <p class="maintxt2">Understanding Gender-Based Violence: Key Facts and Myths</p>
+            <p class="subtxt">Explore the essential facts and dispel common myths surrounding gender-based violence. This article provides insights into the realities faced by survivors and the societal factors contributing to GBV.</p>
+            <div class="readmore">
+                <p class="dtxt">Read More</p>
+                <i class='bx bx-right-arrow-alt dicon'></i>
+            </div>
+        </div>
+
+
+        <div class="article2">
+            <img src="{% static '../static/afamilypic.png' %}" alt="A family pic">
+            <p class="maintxt2">How to Support Survivors of GBV in Your Community</p>
+            <p class="subtxt">Learn practical ways to support survivors of gender-based violence. From offering emotional support to connecting them with resources, discover how you can make a difference.</p>
+            <div class="readmore">
+                <p class="dtxt">Read More</p>
+                <i class='bx bx-right-arrow-alt dicon'></i>
+            </div>
+        </div>
+
+
+        <div class="article3">
+            <img src="{% static '../static/dwomaninblack.png' %}" alt="banner">
+            <p class="maintxt2">The Importance of Mental Health Services for GBV Survivors</p>
+            <p class="subtxt">This article discusses the critical role mental health services play in the recovery journey for survivors of GBV. Understand the various types of support available and their impact on healing.</p>
+            <div class="readmore">
+                <p class="dtxt">Read More</p>
+                <i class='bx bx-right-arrow-alt dicon'></i>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Footer Section: Links for more information -->
+    {% include 'footer.html' %}
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        const elementsToAnimate = document.querySelectorAll('.bannersect, .makeanimapct, .gethelp .grid-item, .reachout, .hotlinesection, .darticles .article1, .darticles .article2, .darticles .article3');
+        
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        });
+        
+        elementsToAnimate.forEach(element => {
+          observer.observe(element);
+        });
+      });
+      </script>
+</body>
+</html>

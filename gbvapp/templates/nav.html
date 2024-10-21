@@ -1,18 +1,31 @@
 {% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
 <!-- Navigation Bar: Contains logo and menu items -->
 <nav class="container">
-    <img src="{% static 'GBVLogo.png' %}" class="logoimg" alt="logo"/>
-    <div class="thecontent">
-      <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">Report Incident</a></li>
-        <li><a href="#services">Support Services</a></li>
-        <li><a href="#contact">About Us</a></li>
-      </ul>
-    </div>
-    <div class="hidecont">
-      <button class="hidebtn"><b>Hide Screen</b></button>
-      <i class="bx bx-low-vision"></i>
-    </div>
-  </nav>
+  <img src="{% static 'GBVLogo.png' %}" class="logoimg" alt="logo"/>
+  <div class="thecontent">
+    <ul>
+
+
+
+      <li><a href="{% url 'homepage' %}" {% if active_page == 'homepage' %}class="active"{% endif %}><i class='bx bx-home'></i><span class="nav-text">Home</span></a></li>
+      <li><a href="{% url 'reportincident' %}" {% if active_page == 'reportincident' %}class="active"{% endif %}><i class='bx bxs-report'></i><span class="nav-text">Report Incident</span></a></li>
+      <li><a href="/er" {% if active_page == 'supportservices' %}class="active"{% endif %}><i class='bx bx-support'></i><span class="nav-text">Support Services</span></a></li>
+      <li><a href="{% url 'aboutus' %}" {% if active_page == 'aboutus' %}class="active"{% endif %}><i class='bx bx-info-circle'></i><span class="nav-text">About Us</span></a></li>
+    </ul>
+  </div>
+  <div class="hidecont">
+    <button class="hidebtn"><b>Hide Screen</b></button>
+    <i class="bx bx-low-vision"></i>
+  </div>
+</nav>
+
+</body>
+</html>

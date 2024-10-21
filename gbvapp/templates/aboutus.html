@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'webicon.png' %}" type="image/x-icon">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    {% include 'cta.html' %}
+    {% include 'nav.html' %}
+
+    <section class="about-section">
+        <div class="about-container">
+            <h1>About Us</h1>
+            <p class="intro-text">
+                Our mission is to provide a safe, secure, and supportive platform for victims of gender-based violence in Nigeria.
+                We offer an anonymous reporting system, resources for legal aid, emergency contacts, and safety planning tools to empower survivors.
+            </p>
+            <div class="about-grid">
+                <div class="grid-item2 mission">
+                    <h2>Our Mission</h2>
+                    <p>We aim to give voice to the voiceless, ensuring every victim has access to support, justice, and recovery in a safe environment.</p>
+                </div>
+                <div class="grid-item2 vision">
+                    <h2>Our Vision</h2>
+                    <p>We envision a world where every individual is free from the fear of violence and has access to justice and healing.</p>
+                </div>
+                <div class="grid-item2 values">
+                    <h2>Our Values</h2>
+                    <p>We are guided by confidentiality, compassion, and justice. We strive to protect, empower, and uplift every survivor who turns to us for help.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+</body>
+</html>
