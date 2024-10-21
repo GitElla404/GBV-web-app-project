@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'wsgi',
     'gbvapp',
     'django.contrib.sites',
     
@@ -80,6 +81,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'gbvproject.wsgi.application'
+
+
 
 
 # Database
