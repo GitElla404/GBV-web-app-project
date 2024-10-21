@@ -24,16 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o)p$506l*!fj^ipe(3t!52ha5y12q6(q1$2k7%(nva&!4(xbqw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv("DEBUG","True") == "True"
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = os.getenv("DJANGO_ALOOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver.nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,14 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gbvapp',
-    'djangoframework',
     'django.contrib.sites',
     
 ]
 
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -59,7 +56,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'gbvproject.urls'
 
