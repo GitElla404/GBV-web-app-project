@@ -19,6 +19,7 @@ This project aims to create a secure web platform for victims of gender-based vi
 - The application is deployed on Render and accessible at https://gbv-web-app-project.onrender.com/
 - Click [here](https://docs.google.com/document/d/1yu53284IZz97YDRLCJfacs7UoI3pRjHUcpwKBmKAn_o/edit?usp=sharing) to view the brief Reaserch Documentation.
 - Click [here](https://drive.google.com/drive/folders/1AV1v_WZsqu5zyXTPZA73dSNKckcysrd6?usp=sharing) to view the web app copy files.
+- Click [here](https://docs.google.com/presentation/d/1kRuHSSkoGErG23MruFbwi3LbQugwV8Lx3GWWUdynIJg/edit?usp=sharing) to view the HERtobefest Hackathon Presentation file.
 
 
 ## Contributing
