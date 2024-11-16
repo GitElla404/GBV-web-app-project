@@ -35,6 +35,10 @@ def supportservices(request):
     return render(request, 'supportservices.html', {'active_page': active_page})
 
 
+def dropdown(request):
+    return render(request, 'dropdown.html')
+
+
 def aboutus(request):
     active_page = 'aboutus'
     return render(request, 'aboutus.html', {'active_page': active_page})

@@ -1,8 +1,5 @@
 {% load static %}
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,7 +11,7 @@
       rel="stylesheet"
     />
     <link rel="icon" href="{% static '../static/webicon.png' %}" type="image/x-icon">
-    <link rel="stylesheet" href="{% static 'index.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}" />
 
     <script>
       function hideAlert() {
@@ -49,9 +46,9 @@
       <p class="subtext">
         You’re not alone. Our community is here to listen, support, and help you
         heal. Share your experience anonymously and connect with others who
-        understand. Together, we can break the silence and build strength.
+        understand. <br>Together, we can break the silence and build strength.
       </p>
-      <button><b><a href="{% url 'collect_email' %}">Join The Community</a></b></button>
+      <div class="joinwrap"><a href="{% url 'collect_email' %}">Join The Community</a></div>
     </section>
 
     <!-- Impact Section: Invite users to get involved -->
