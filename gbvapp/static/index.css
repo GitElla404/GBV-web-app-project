@@ -1202,8 +1202,8 @@ margin: 4% 8%;
   }
 
   .grid-item img {
-    width: 100%; 
-    height: auto;
+    width: 80%; 
+    height: 20%;
   }
 
   .gethelp p {
@@ -1221,10 +1221,6 @@ margin: 4% 8%;
     gap: 20px;
   }
 
-  .grid-item img {
-    width: 100%;
-    height: 30%; 
-  }
 
   .gethelp p {
     font-size: medium;
