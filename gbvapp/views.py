@@ -11,11 +11,11 @@ def collect_email(request):
     if request.method == 'POST':
         form = EmailForm(request.POST)
         if form.is_valid():
-            email = form.cleaned_data['email']
-            email_entry = Email(email=email)
-            email_entry.save()
+            # email = form.cleaned_data['email']
+            # email_entry = Email(email=email)
+            # email_entry.save()
             
-            messages.success(request, "Your email has been added.")
+            # messages.success(request, "Your email has been added.")
             return redirect('homepage') 
     else:
         form = EmailForm()
