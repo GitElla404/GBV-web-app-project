@@ -7,17 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.2/css/boxicons.min.css" rel="stylesheet">
   <title>Responsive Navigation</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
   <!-- Navigation Bar: Contains logo and menu items -->
   <nav class="container">
     <img src="{% static 'GBVLogo.png' %}" class="logoimg" alt="logo"/>
-
-    
-    
-    <div class="menu-icon" id="menu-icon">
-      <i class="bx bx-menu"></i>
-    </div>
 
     <div class="thecontent" id="navbar">
       <ul>
@@ -33,17 +28,13 @@
       <i class="bx bx-low-vision"></i>
     </div>
 
-    
-  </nav>
+    <div id="hamnav">
+      <a href="{% url 'dropdown' %}">
+        <label for="hamburger">&#9776;</label>
+      </a>
+    </div>
 
-  <script>
-    const menuIcon = document.getElementById('menu-icon');
-    const navbar = document.getElementById('navbar');
-    
-    menuIcon.addEventListener('click', () => {
-      navbar.classList.toggle('active');
-    });
-  </script>
+  </nav>
 
 </body>
 </html>
