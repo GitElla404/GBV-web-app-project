@@ -101,14 +101,14 @@ body {
 
 /* Call to Action section */
 .cta {
-  background-color: #f3f2f4;
+  background-color: pink;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   font-family: "Inter";
   font-size: calc(20px / 16px * 100%);
-  padding: 20px;
+  padding: 0;
 
     
 }
