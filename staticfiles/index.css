@@ -100,6 +100,10 @@ body {
 
 
 /* Call to Action section */
+.hiii{
+  color: pink;
+}
+
 .cta {
   background-color: pink;
   display: flex;
@@ -108,7 +112,7 @@ body {
   align-items: center;
   font-family: "Inter";
   font-size: calc(20px / 16px * 100%);
-  padding: 20px;
+  padding: 0;
 
     
 }

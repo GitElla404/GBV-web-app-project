@@ -1,18 +1,30 @@
-<!-- Call to Action: Immediate help section -->
-    <section class="cta">
-        <div class="txtbtn">
-          <span id="needtxt">Need Help Right Away?</span>
-          <span id="gethelptxt"
-            >If you are in danger, please get help now. Don't wait!</span
-          >
-          <button id="goldbtn"><a href="{% url 'collect_email' %}">Get Help Now!</a></button>
-        </div>
-        <div class="profilesec">
-          <i class="bx bx-user-circle"></i>
-          <p>Guest</p>
-          <p>|</p>
-          <i class="bx bx-globe"></i>
-          <p>English</p>
-          <i class="bx bx-chevron-down"></i>
-        </div>
-      </section>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}" />
+</head>
+<body>
+  <!-- Call to Action: Immediate help section -->
+   
+  <section class="cta">
+    <div class="txtbtn">
+      <span id="needtxt">Need Help Right Away?</span>
+      <span id="gethelptxt"
+        >If you are in danger, please get help now. Don't wait!</span
+      >
+      <button id="goldbtn"><a href="{% url 'collect_email' %}">Get Help Now!</a></button>
+    </div>
+    <div class="profilesec">
+      <i class="bx bx-user-circle"></i>
+      <p>Guest</p>
+      <p>|</p>
+      <i class="bx bx-globe"></i>
+      <p>English</p>
+      <i class="bx bx-chevron-down"></i>
+    </div>
+  </section>
+</body>
+</html>
