@@ -358,7 +358,7 @@ body {
 
 .joinwrap {
   position: absolute;
-  top: 70%;
+  top: 75%;
   left: 0%;
   background-color: #bd8631;
   color: #000;
@@ -547,7 +547,7 @@ body {
 .gethelp {
   background-color: #0E344D;
   color: #fff;
-  padding: 20px 100px 20px 100px;
+  padding: 20px 80px 20px 40px;
   text-align: center;
 }
 
@@ -582,8 +582,8 @@ body {
 }
 
 .grid-item img {
-  width: 280px;
-  height: 300px; 
+  width: 290px;
+  height: 200px; 
   object-fit: cover;
   border-radius: 5px 5px 0 0;
 }
@@ -591,10 +591,9 @@ body {
 .row1 p, .row2 p, .row3 p, .row4 p{
   color: black;
   text-align: left;
-  font-size: small;
+  font-size: 1px;
   padding-left: 5px;
   padding-right: 3px;
-  font-weight: 300;
   margin: 10px 0;
 }
 
@@ -726,8 +725,8 @@ margin: 4% 8%;
   font-family: 'Inter';
   font-weight: lighter;
   line-height: 30px;
-  font-size: 16px;
-  gap: 50px;
+  font-size: 14px;
+  gap: 70px;
 }
 
 .dfooter ul li {
@@ -796,7 +795,7 @@ margin: 4% 8%;
 }
 
 .grid-item p {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
   line-height: 1.5;
 }
@@ -949,20 +948,17 @@ margin: 4% 8%;
   }
 
   .subtext {
-    top: 80px;
     font-size: 12px;
     width: 50%; 
-    line-height: 12px;
+    line-height: 10px;
   }
 
   .joinwrap {
-    padding: 0 5px;
-    top: 120px;
+    padding: 8px 16px; 
   }
 
   .joinwrap a{
     font-size: 8px; 
-    padding: 0;
   }
 }
 
@@ -982,6 +978,10 @@ margin: 4% 8%;
   }
 
 
+  .joinwrap {
+    padding: 8px; 
+    top: 90%;
+  }
 
   .joinwrap a{
     font-size: 6px;
@@ -1202,8 +1202,8 @@ margin: 4% 8%;
   }
 
   .grid-item img {
-    width: 80%; 
-    height: 20%;
+    width: 100%; 
+    height: auto;
   }
 
   .gethelp p {
@@ -1221,6 +1221,10 @@ margin: 4% 8%;
     gap: 20px;
   }
 
+  .grid-item img {
+    width: 100%;
+    height: 30%; 
+  }
 
   .gethelp p {
     font-size: medium;
